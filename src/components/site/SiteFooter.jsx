@@ -28,6 +28,7 @@ const COLS = [
   {
     title: 'Legal',
     links: [
+      ['Compliance', '/compliance'],
       ['Terms of Service', '/legal/terms'],
       ['Privacy Policy', '/legal/privacy'],
       ['AML Policy', '/legal/aml'],

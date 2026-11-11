@@ -23,6 +23,9 @@ import Security from '@/pages/Security';
 import About from '@/pages/About';
 import Faq from '@/pages/Faq';
 import LegalPage from '@/pages/LegalPage';
+import Compliance from '@/pages/Compliance';
+import AmlKycStatement from '@/pages/AmlKycStatement';
+import AbcPolicy from '@/pages/AbcPolicy';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
 
@@ -63,6 +66,9 @@ function App() {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/legal/:slug" element={<LegalPage />} />
+                <Route path="/compliance" element={<Compliance />} />
+                <Route path="/compliance/aml-kyc" element={<AmlKycStatement />} />
+                <Route path="/compliance/anti-bribery" element={<AbcPolicy />} />
               </Route>
               <Route
                 path="/test/*"
