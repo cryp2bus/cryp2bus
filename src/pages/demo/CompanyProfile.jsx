@@ -66,17 +66,16 @@ export default function CompanyProfile() {
               <CountryOptions />
             </SelectInput>
           </Field>
-          <Field id="registrationNumber" label="Registration number" error={errors.registrationNumber}>
-            <TextInput
-              id="registrationNumber"
-              value={form.registrationNumber}
-              error={errors.registrationNumber}
-              onChange={set('registrationNumber')}
-            />
-          </Field>
-          <Field id="website" label="Website" error={errors.website}>
-            <TextInput id="website" value={form.website} error={errors.website} onChange={set('website')} />
-          </Field>
+          <div className="sm:col-span-2">
+            <Field id="registrationNumber" label="Registration number" error={errors.registrationNumber}>
+              <TextInput
+                id="registrationNumber"
+                value={form.registrationNumber}
+                error={errors.registrationNumber}
+                onChange={set('registrationNumber')}
+              />
+            </Field>
+          </div>
         </div>
         <Field id="address" label="Registered address" error={errors.address}>
           <TextInput id="address" value={form.address} error={errors.address} onChange={set('address')} />

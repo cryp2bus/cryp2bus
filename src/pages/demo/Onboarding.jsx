@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Check, LayoutDashboard, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DocumentChecklist from '@/components/demo/DocumentChecklist';
 import { DemoFooter, DemoLogo, FormError, StatusBadge, usePageTitle } from '@/components/demo/DemoChrome';
@@ -125,20 +126,29 @@ export default function Onboarding() {
     <div className="min-h-screen flex flex-col">
       <header className="h-16 px-4 sm:px-6 flex items-center justify-between gap-3 border-b border-border">
         <DemoLogo />
-        <div className="flex items-center gap-3 text-sm">
-          <StatusBadge status={user.accountStatus} />
-          <Link className="text-muted-foreground hover:text-foreground" to="/test/cabinet">
-            Cabinet
+        <div className="flex items-center gap-1 sm:gap-3 text-sm shrink-0">
+          <span className="hidden sm:inline-flex">
+            <StatusBadge status={user.accountStatus} />
+          </span>
+          <Link
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1.5 text-muted-foreground hover:text-foreground"
+            to="/test/cabinet"
+            aria-label="Cabinet"
+          >
+            <LayoutDashboard className="h-4 w-4" />
+            <span className="hidden sm:inline">Cabinet</span>
           </Link>
           <button
             type="button"
-            className="text-muted-foreground hover:text-foreground"
+            aria-label="Log out"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1.5 text-muted-foreground hover:text-foreground"
             onClick={async () => {
               await signOut();
               navigate('/test/login', { replace: true });
             }}
           >
-            Log out
+            <LogOut className="h-4 w-4" />
+            <span className="hidden sm:inline">Log out</span>
           </button>
         </div>
       </header>
@@ -148,22 +158,42 @@ export default function Onboarding() {
         <p className="mt-2 text-sm text-muted-foreground">
           Drafts stay on this device. Submitting moves the account to under review. It does not start a live KYB check.
         </p>
-        <ol className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {STEPS.map((item, index) => (
-            <li key={item.id}>
-              <button
-                type="button"
-                onClick={() => go(item.id)}
-                className={`w-full rounded-lg border px-3 py-2 text-left text-sm ${
-                  item.id === step ? 'border-electric bg-electric/10' : 'border-border text-muted-foreground'
+        <div className="mt-5 sm:hidden">
+          <StatusBadge status={user.accountStatus} />
+        </div>
+        <nav aria-label="Onboarding steps" className="mt-8">
+          <div className="flex gap-1.5">
+            {STEPS.map((item, index) => (
+              <span
+                key={item.id}
+                className={`h-1 flex-1 rounded-full transition-colors ${
+                  index <= stepIndex ? 'bg-electric' : 'bg-border'
                 }`}
-              >
-                <span className="block text-xs">{index + 1}</span>
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ol>
+              />
+            ))}
+          </div>
+          <ol className="mt-3 grid grid-cols-4 gap-1.5">
+            {STEPS.map((item, index) => {
+              const active = item.id === step;
+              const done = index < stepIndex;
+              return (
+                <li key={item.id} className="min-w-0">
+                  <button
+                    type="button"
+                    onClick={() => go(item.id)}
+                    aria-current={active ? 'step' : undefined}
+                    className={`inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors ${
+                      active ? 'text-foreground' : done ? 'text-electric' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {done ? <Check className="h-3.5 w-3.5 shrink-0" /> : null}
+                    <span className="truncate">{item.label}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </nav>
 
         <div className="glass rounded-2xl p-6 sm:p-8 mt-6">
           {step === 'company' ? (
@@ -190,16 +220,6 @@ export default function Onboarding() {
                   value={company.address || ''}
                   error={companyErrors.address}
                   onChange={setCompanyField('address')}
-                />
-              </Field>
-              <Field id="website" label="Website" error={companyErrors.website} hint="Optional.">
-                <TextInput
-                  id="website"
-                  inputMode="url"
-                  placeholder="company.com"
-                  value={company.website || ''}
-                  error={companyErrors.website}
-                  onChange={setCompanyField('website')}
                 />
               </Field>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -350,7 +370,6 @@ export default function Onboarding() {
                 <ReviewRow label="Country" value={user.country} />
                 <ReviewRow label="Registration number" value={company.registrationNumber} />
                 <ReviewRow label="Address" value={company.address} />
-                <ReviewRow label="Website" value={company.website || 'Not provided'} />
                 <ReviewRow label="Business type" value={company.businessType} />
                 <ReviewRow label="Monthly volume" value={company.monthlyVolume} />
               </ReviewBlock>
