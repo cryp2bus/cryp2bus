@@ -1,0 +1,106 @@
+---
+title: "Network fee responsibility on B2B crypto invoices: who funds the shortfall"
+titleEn: "Network fee responsibility on B2B crypto invoices: who funds the shortfall"
+description: "Crypto invoice network fees create settlement shortfalls when gas costs aren't assigned. Learn payer-pays vs receiver-pays rules and accounting fixes."
+descriptionEn: "Crypto invoice network fees create settlement shortfalls when gas costs aren't assigned. Learn payer-pays vs receiver-pays rules and accounting fixes."
+datePublished: "2026-10-06"
+dateModified: "2026-10-06"
+author:
+  name: "Cryp2bus Editorial"
+  role: "Editorial"
+category: "Invoice Settlement"
+readTime: "7 min"
+coverImage: ""
+featured: false
+tags: ["crypto invoice network fees", "Invoice Settlement", "business crypto", "2026"]
+tagsEn: ["crypto invoice network fees", "Invoice Settlement", "business crypto", "2026"]
+faq:
+  - question: "Who pays the network fee on a crypto invoice?"
+    answer: "There is no universal rule. The payer and supplier must agree in advance whether the payer covers the network fee on top of the invoice total (payer-pays) or whether the fee is deducted from the transferred amount (receiver-pays). Without a written term, suppliers often receive less than the invoiced figure because the network fee is subtracted automatically by the sending wallet or exchange."
+  - question: "What is a gas fee policy in a supplier contract?"
+    answer: "A gas fee policy is a clause stating who funds blockchain network fees on crypto invoice settlements, how shortfalls under a set threshold are handled, and whether the payer tops up the difference if the amount received falls short of the invoiced amount."
+  - question: "How do you record a network fee shortfall in accounting?"
+    answer: "Most finance teams book the invoiced amount as the receivable or payable and post the network fee as a separate expense line, distinct from the underlying goods or services cost. This keeps the invoice total auditable even when the on-chain transfer amount differs from the invoice face value."
+  - question: "Does payer-pays or receiver-pays change which crypto asset you use?"
+    answer: "The fee-responsibility rule is independent of asset choice, but network fee size varies by chain and token. Transfers on networks with higher congestion or using tokens with higher gas costs make the shortfall question more material, which is why many B2B pairs settle in stablecoins on lower-fee networks."
+  - question: "What happens if a supplier receives less than the invoice amount because of network fees?"
+    answer: "If no fee-responsibility term was agreed, the supplier should flag the shortfall against the invoiced amount and request a top-up payment or credit note from the payer, following the payment terms set out in the contract. This is an operational reconciliation, not a tax or legal determination, and specific handling should follow your internal controls."
+  - question: "Can the payer pre-fund the network fee so the supplier always receives the full invoice?"
+    answer: "Yes. Many payers set a payer-pays gas fee policy by default, sending the invoice amount plus an estimated network fee so the supplier's wallet receives the exact invoiced figure regardless of on-chain cost at the time of transfer."
+---
+
+Crypto invoice network fees are the blockchain costs paid to validators or miners to process a transaction — and if nobody assigns responsibility for them in advance, the supplier often receives less than the invoice total. This happens because network fees are typically deducted from the transfer amount by default, not added on top. For B2B settlement, that difference is not a rounding error; it is a line item that needs a rule, a record, and — when it recurs — a renegotiated payment term.
+
+This guide sets out how payers and suppliers agree fee responsibility on crypto invoices, how payer-pays and receiver-pays models work in practice, how to handle a shortfall when it happens, and what the fee line should look like on your books. It does not cover general overpayment or partial-payment reconciliation — that is a separate operational process from a defined network fee rule.
+
+## What "crypto invoice network fees" actually are
+
+A network fee (often called a gas fee on Ethereum-based chains) is paid to the blockchain's validators to include your transaction in a block. It is unrelated to any service fee your exchange, custodian, or payment processor may charge separately. On most chains the fee is paid in the chain's native asset, not necessarily the token you are transferring — for example, sending USDT on Ethereum requires ETH for gas, while sending USDT on Tron requires a small TRX-denominated cost. Fee size depends on network congestion, transaction complexity, and the settlement rail chosen, which is why [USDC vs USDT for supplier payments](/blog/usdc-vs-usdt-for-supplier-payments/) is partly a fee-exposure decision, not only a stablecoin-issuer decision.
+
+The core operational problem is this: if your treasury system sends "500 USDT to Supplier X" and the wallet or exchange nets the network fee out of that 500, the supplier's wallet shows an amount received below the invoice total. If the invoice said 500 and the supplier's ledger shows 497.80, someone has to explain the gap — and ideally, the contract already said who would.
+
+## Payer-pays versus receiver-pays: the two models
+
+There are two baseline rules businesses use to assign crypto invoice network fees. Neither is universally "correct"; each should be a documented term, ideally referenced in your [payment terms](/blog/how-to-pay-business-invoices-with-usdt/) alongside settlement currency and timing.
+
+**Payer-pays.** The payer calculates the invoice total plus an estimated network fee and sends that combined amount, so the supplier's wallet receives the full invoiced figure. This is common where the payer controls the sending wallet and wants supplier reconciliation to be simple — the amount received should always match the invoice.
+
+**Receiver-pays.** The payer sends exactly the invoice amount, and the network fee is deducted from that transfer, meaning the supplier absorbs the cost and receives slightly less. This is more common on high-fee corridors where payers prefer predictable outbound amounts and push fee variability downstream, or where suppliers have agreed a fee allowance already built into pricing.
+
+A third variant some teams use is a **threshold rule**: fees under a set amount (for example, under $2 equivalent) are absorbed by the supplier without adjustment, while fees above the threshold trigger a top-up from the payer. This avoids renegotiating every micro-fee while still protecting suppliers from large shortfalls during network congestion.
+
+| Model | Who absorbs the fee | Supplier receives | Typical use case |
+|---|---|---|---|
+| Payer-pays | Payer | Full invoiced amount | High-value invoices, ongoing supplier relationships |
+| Receiver-pays | Supplier | Invoice minus network fee | Low-fee stablecoin corridors, pre-agreed pricing |
+| Threshold rule | Shared | Full amount above threshold, net amount below | Mixed invoice sizes, variable network congestion |
+
+## How to set a gas fee policy with a supplier
+
+1. **State the rule in the contract or invoice terms.** Add a single sentence specifying payer-pays or receiver-pays, and reference it in the same clause as settlement currency and payment terms.
+2. **Agree the fee-estimation method.** Decide whether the payer estimates the fee at send time (common with volatile gas prices) or uses a fixed allowance reviewed periodically.
+3. **Set a shortfall threshold if using a hybrid model.** Define the amount below which the supplier absorbs the difference without a top-up request.
+4. **Confirm which network and asset apply.** Network fee size differs by chain, so the policy should specify the settlement rail, consistent with how you chose between [corporate treasury](/blog/corporate-crypto-treasury-basics/) rails for different corridors.
+5. **Document the escalation path.** If a transfer nets out significantly less than expected due to a fee spike, specify who the supplier contacts and within what window.
+
+![Two professionals reviewing invoice and settlement documents at a desk](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80)
+
+## Handling a shortfall without turning it into a dispute
+
+When the amount received is below the invoiced figure because of a network fee rather than any other deduction, the fix is procedural, not a negotiation from scratch — provided the fee rule was agreed beforehand.
+
+- If payer-pays was the agreed term and the transfer under-delivered due to a fee spike between calculation and broadcast, the payer sends a top-up transfer for the difference.
+- If receiver-pays was the agreed term, no top-up is owed; the supplier's invoice is marked settled at the net amount with the fee noted as a cost of receipt.
+- If no rule was agreed and a shortfall appears, the supplier should raise it against the original invoice amount, and the parties apply whichever default your Cryptobus business account settlement workflow documents, before falling back to ad hoc negotiation.
+- Repeated shortfalls on recurring invoices are a signal to formalize a written gas fee policy rather than resolving each instance individually.
+- For six-figure or cross-border transfers where fee variability is larger, sizing the transaction through an [OTC desk](/blog/when-businesses-use-otc-crypto-desks/) can reduce the number of fee events versus multiple smaller transfers, though desk-quoted fees are a separate item from network fees.
+
+## Accounting and the fee line
+
+Finance teams generally keep three figures distinct: the invoice total, the amount transferred, and the network fee. Collapsing these into one net number makes audit trails harder to reconcile, particularly if your controller is applying guidance referenced in [IFRS digital-asset materials](https://www.ifrs.org) for how transaction costs are treated in your jurisdiction.
+
+A simple approach many ops teams use:
+
+- Record the invoice at its face value as the receivable or payable.
+- Post the network fee as a separate "transaction cost" or "bank charges" equivalent expense line, not netted against revenue or cost of goods.
+- Reconcile the amount actually received or sent against the invoice total, flagging any gap as a fee-related variance rather than a payment discrepancy.
+- Keep the transaction hash and fee amount attached to the journal entry for audit purposes, since blockchain transfers are independently verifiable.
+
+This separation matters most when comparing crypto settlement against [cross-border bank wires](/blog/cross-border-crypto-settlement-vs-bank-wires/), where wire fees are usually deducted by correspondent banks in a similarly opaque way — the difference is that network fees are visible on-chain and can be documented precisely per transaction.
+
+## Risks and limits
+
+A documented fee rule reduces disputes but does not eliminate every edge case. Network fees can spike sharply during periods of congestion, meaning a payer-pays estimate calculated minutes before broadcast can still undershoot. Different blockchains price fees in different native assets, so a policy written for one network may not transfer cleanly if you later move the corridor to another chain. Regulatory and accounting treatment of transaction costs can vary by jurisdiction, so you should confirm your approach against applicable guidance such as that referenced by the IFRS Foundation and relevant national accounting bodies rather than relying solely on this article. None of the above is tax, legal, or accounting advice, and cross-border AML/KYB obligations referenced by bodies such as the [FATF](https://www.fatf-gafi.org) sit outside the scope of a fee-responsibility clause and should be handled separately in your compliance program.
+
+## Quick reference checklist
+
+- Fee-responsibility rule stated in the contract or invoice terms (payer-pays, receiver-pays, or threshold)
+- Settlement network and asset specified, since fee size differs by chain
+- Shortfall threshold defined if using a hybrid model
+- Escalation contact and response window documented for fee-spike shortfalls
+- Network fee booked as a separate expense line, not netted against the invoice total
+- Transaction hash and fee amount retained with the journal entry for audit purposes
+
+Open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border.
+
+*This material is for informational and educational purposes only. It is not legal, tax, investment, or financial advice. Cryptocurrency transactions involve operational, market, and compliance risk. Outcomes depend on your policies, counterparties, corridors, and applicable law. Readers should verify primary sources and internal controls as of the action date.*

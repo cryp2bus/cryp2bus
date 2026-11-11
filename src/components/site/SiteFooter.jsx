@@ -1,0 +1,152 @@
+import { Link } from 'react-router-dom';
+import { Mail, Phone } from 'lucide-react';
+import { useLeadModal } from '@/components/LeadModal';
+import BrandLogo from '@/components/site/BrandLogo';
+import { COMPANY, companyFooterLine, mailtoHref, OPERATOR_STATEMENT, telHref } from '@/lib/company';
+
+const COLS = [
+  {
+    title: 'Products',
+    links: [
+      ['Exchange', '/exchange'],
+      ['Markets', '/markets'],
+      ['Invoice Payments', '/invoice-payments'],
+      ['OTC', '/otc'],
+      ['Pricing', '/pricing'],
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      ['About', '/about'],
+      ['Blog', '/blog'],
+      ['Security', '/security'],
+      ['How It Works', '/how-it-works'],
+      ['FAQ', '/faq'],
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      ['Terms of Service', '/legal/terms'],
+      ['Privacy Policy', '/legal/privacy'],
+      ['AML Policy', '/legal/aml'],
+      ['KYC/KYB Policy', '/legal/kyc'],
+      ['Risk Disclosure', '/legal/risk'],
+      ['Cookie Policy', '/legal/cookies'],
+      ['Restricted Countries', '/legal/restricted'],
+      ['Complaints', '/legal/complaints'],
+    ],
+  },
+];
+
+export default function SiteFooter() {
+  const { openLeadModal } = useLeadModal();
+
+  return (
+    <footer className="border-t border-border bg-graphite/80">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <BrandLogo className="mb-4" />
+            <p className="text-sm text-foreground font-medium leading-relaxed">Crypto for Business.</p>
+            <p className="text-sm text-muted-foreground mt-1">Pay an invoice. Get crypto.</p>
+            <div className="mt-4 space-y-2 text-sm">
+              <a
+                href={mailtoHref()}
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors break-all"
+              >
+                <Mail className="h-3.5 w-3.5 shrink-0 text-electric" />
+                {COMPANY.email}
+              </a>
+              <a
+                href={telHref()}
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Phone className="h-3.5 w-3.5 shrink-0 text-electric" />
+                {COMPANY.phoneDisplay}
+              </a>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {['Trust', 'Liquidity', 'Speed', 'Compliance'].map((t) => (
+                <span
+                  key={t}
+                  className="text-[11px] px-2 py-1 rounded-full border border-border text-muted-foreground"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          {COLS.map((col) => (
+            <div key={col.title}>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+                {col.title}
+              </h4>
+              <ul className="space-y-2.5">
+                {col.links.map(([label, to]) => (
+                  <li key={label}>
+                    <Link
+                      to={to}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+              Support
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <button
+                  type="button"
+                  onClick={() =>
+                    openLeadModal({ source: 'footer-contact', title: 'Contact Cryptobus' })
+                  }
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Contact form
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() =>
+                    openLeadModal({
+                      source: 'footer-open-account',
+                      title: 'Open Business Account',
+                    })
+                  }
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Open Account
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-border flex flex-col gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} {COMPANY.brand}. All rights reserved.
+            </p>
+            <p className="text-xs text-muted-foreground max-w-2xl text-center sm:text-right">
+              {OPERATOR_STATEMENT} All corporate clients complete KYB.
+            </p>
+          </div>
+          <p className="text-[11px] text-muted-foreground/80 text-center sm:text-left leading-relaxed">
+            {companyFooterLine()} · {COMPANY.courtRegistry}
+          </p>
+          <p className="text-[11px] text-gray-500 text-center sm:text-left leading-relaxed">
+            Demo project / ДЕМО — this website is a concept demonstration, not a live financial service.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

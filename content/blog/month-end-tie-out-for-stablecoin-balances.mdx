@@ -1,0 +1,141 @@
+---
+title: "Month-end tie-out for stablecoin balances: a controller checklist"
+titleEn: "Month-end tie-out for stablecoin balances: a controller checklist"
+description: "A practical stablecoin month-end close checklist for controllers: wallet views, provider statements, cut-off for in-flight hashes, and subledger tie-out steps."
+descriptionEn: "A practical stablecoin month-end close checklist for controllers: wallet views, provider statements, cut-off for in-flight hashes, and subledger tie-out steps."
+datePublished: "2026-10-14"
+dateModified: "2026-10-14"
+author:
+  name: "Cryp2bus Editorial"
+  role: "Editorial"
+category: "Corporate Treasury"
+readTime: "8 min"
+coverImage: ""
+featured: false
+tags: ["stablecoin month-end close", "Corporate Treasury", "business crypto", "2026"]
+tagsEn: ["stablecoin month-end close", "Corporate Treasury", "business crypto", "2026"]
+faq:
+  - question: "What is a stablecoin month-end close?"
+    answer: "A stablecoin month-end close is the period-end process of reconciling on-chain and provider-reported stablecoin balances used for payables and receipts against your subledger, confirming cut-off treatment for in-flight transactions, and documenting the tie-out for your close file. It differs from daily payment evidence packs because it is a point-in-time balance reconciliation, not a per-transaction record."
+  - question: "Which wallet view should controllers use for stablecoin balance reconciliation?"
+    answer: "Use the provider or custody statement generated as of the close cut-off time, not a live wallet screen, because live balances can change between the moment you view them and the moment you save the evidence. Pair the statement with a block-explorer confirmation count for any balance near the cut-off boundary."
+  - question: "How should in-flight hashes be treated at month-end?"
+    answer: "A transaction broadcast but not yet confirmed at the cut-off time is typically treated as in-flight and excluded from the confirmed balance, with a separate note in the close file describing the hash, amount, and expected settlement date. Your internal policy should state the confirmation threshold used for cut-off consistently across periods."
+  - question: "How does month-end tie-out differ from the per-payment evidence pack?"
+    answer: "A per-payment evidence pack documents one transaction at the time it happens, including invoice reference, hash, and counterparty detail. A month-end tie-out instead reconciles the aggregate ending balance across all wallets and providers against the subledger total, and reviews unfilled desk tickets, suspense entries, and cut-off items as a batch."
+  - question: "Do unfilled OTC desk tickets need to be included in month-end reconciliation?"
+    answer: "Unfilled or partially filled desk tickets should be logged as open items in the close file with their status and expected clearing date, even though they are not yet reflected in a wallet balance, so the reconciliation explains any gap between subledger expectations and confirmed on-chain balances."
+  - question: "What accounting guidance applies to stablecoin balances at close?"
+    answer: "Entities generally apply existing accounting frameworks to determine how digital assets are classified and measured, and the applicable treatment depends on your jurisdiction, accounting standard, and facts. This article does not state a specific accounting outcome; consult your accounting standard-setter's published materials and your advisors for your entity's treatment."
+---
+
+Stablecoin month-end close is the process of reconciling every wallet, custody account, and payment-provider statement holding USDT, USDC, or other stablecoins used for invoice payments and receipts against your general ledger subledger, as of a single cut-off point. Unlike the evidence pack you build for each individual supplier payment during the month — hash, invoice reference, counterparty wallet, timestamp — the month-end tie-out looks at the aggregate: does the ending balance across all your stablecoin holding points match what your subledger says it should be, and can you explain every difference?
+
+For controllers who already run a [corporate crypto treasury](/blog/corporate-crypto-treasury-basics/), this is a familiar discipline borrowed from bank reconciliation, adapted for the quirks of on-chain settlement: unconfirmed transactions, desk tickets still in flight, and multiple statement formats from different providers. This checklist walks through the sources of truth, the cut-off decisions, and the documentation a reviewer will expect to see.
+
+## Why stablecoin balances need a separate month-end process
+
+Bank reconciliations rely on a single, authoritative bank statement as of a cut-off date. Stablecoin balances held for business payments rarely have one equivalent source. You may hold balances across:
+
+- A custody or exchange account balance shown in a provider dashboard
+- Self-custodied wallets visible only on a block explorer
+- An OTC desk's internal ledger, which may lag or lead the on-chain state
+- Omnibus or pooled addresses where your allocation is tracked off-chain by a provider
+
+Each of these can report a slightly different number depending on what counts as "confirmed," what time zone is used, and whether in-transit amounts are included. A stablecoin month-end close exists specifically to reconcile these views into one number your subledger can rely on, and to document why any residual difference is acceptable or requires adjustment.
+
+This is distinct from the day-to-day evidence pack described in guides like [paying business invoices with USDT](/blog/how-to-pay-business-invoices-with-usdt/), which focuses on proving a single payment happened correctly. The month-end close instead asks: at this exact moment, what do we actually hold, and does it match what our books say we should hold?
+
+## Choosing the right balance source: wallet view vs provider statement
+
+A live wallet screen is not a reconciliation source. It changes in real time, it is not timestamped for audit purposes, and two people looking at it five minutes apart may see different numbers. For a defensible stablecoin month-end close, use:
+
+1. **A provider or custody statement generated as of the cut-off timestamp.** Most custody and exchange providers can produce a dated statement or export, similar to a bank statement, showing the balance at a specific moment.
+2. **A block-explorer confirmation snapshot for self-custodied addresses**, saved as a PDF or screenshot with the block height and timestamp, not just the current balance.
+3. **An OTC desk settlement confirmation** for any trade that affects the closing balance, cross-referenced against the desk's ticket number.
+
+| Balance source | What it shows | Best use in close | Limitation |
+|---|---|---|---|
+| Provider/custody statement | Confirmed balance as of statement date | Primary reconciliation source | Statement cut-off time may differ from your internal policy time |
+| Block explorer snapshot | On-chain confirmed balance at a block height | Self-custodied wallet verification | No invoice or counterparty context |
+| OTC desk ticket confirmation | Trade status: filled, partial, open | Explains timing gaps in balance | Unfilled tickets are not balance until settled |
+| Live wallet dashboard | Real-time balance | Daily monitoring only | Not suitable as an audit-dated source |
+
+Pick one authoritative cut-off time — for example, 23:59 UTC on the last calendar day of the period — and apply it consistently across every source. Mixing a custody statement cut at one time zone with a block explorer snapshot taken hours later is a common source of unexplained variances.
+
+![Controller reviewing financial statements and reconciliation documents at a desk](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80)
+
+## Treating in-flight hashes and unfilled desk tickets at cut-off
+
+Two categories of activity routinely create confusion at period end, and both need a written policy applied consistently period over period.
+
+**In-flight hashes.** A transaction broadcast to the network before the cut-off but not yet confirmed at the cut-off time sits in a gray zone. Your internal policy should specify:
+
+- The minimum confirmation count or block depth treated as "settled" for close purposes
+- Whether broadcast-but-unconfirmed amounts are excluded from the confirmed balance and instead logged as a reconciling item
+- How the same transaction is treated the following period once it confirms, so it is not double-counted or dropped
+
+**Unfilled OTC desk tickets.** If you requested a conversion or settlement through a desk — see [when businesses use OTC crypto desks](/blog/when-businesses-use-otc-crypto-desks/) — and the ticket had not fully settled by the cut-off, it should not be included in your confirmed stablecoin balance. Instead, log it as an open item with:
+
+1. Ticket reference number and counterparty desk
+2. Requested amount and currency pair
+3. Status at cut-off (open, partially filled, pending settlement)
+4. Expected settlement date
+5. Impact on the balance once settled, cross-referenced to the subledger entry it will clear
+
+This mirrors how a controller would treat an outstanding wire transfer that left the bank but had not yet posted to the counterparty's account by period end — the logic is familiar even though the mechanics are different.
+
+## Reconciling the subledger: a step-by-step approach
+
+A clean stablecoin month-end close generally follows this sequence:
+
+1. **Freeze the cut-off time** in writing (date, time, time zone) and apply it to every balance source without exception.
+2. **Pull provider statements** for every custody account, exchange balance, and payment-processor wallet holding business stablecoin funds.
+3. **Capture block-explorer snapshots** for self-custodied addresses, including block height and confirmation count.
+4. **List open OTC tickets** and categorize each as filled, partially filled, or still open as of cut-off.
+5. **Sum confirmed balances** across all sources into a single "total stablecoin position" figure.
+6. **Compare the total to the subledger balance** for stablecoin holdings, item by item where possible rather than only at the aggregate level.
+7. **Investigate and document every variance**, however small, with a short written explanation and, where needed, a reference to an in-flight hash or open ticket.
+8. **Record any required adjusting entries** in the period they relate to, following your entity's existing close calendar and review sign-off process.
+9. **Archive the full evidence set** — statements, snapshots, ticket logs, and the variance memo — in the same location as your other period-end reconciliation files.
+
+| Step | Owner (typical) | Evidence retained |
+|---|---|---|
+| Freeze cut-off | Controller | Written policy memo |
+| Pull statements | Treasury/AP | Dated provider exports |
+| Capture on-chain snapshots | Treasury ops | Block explorer PDFs |
+| List open tickets | Treasury | Desk confirmations |
+| Reconcile to subledger | Accounting | Variance memo |
+| Sign-off | Controller/CFO | Approval record |
+
+If your entity transacts across multiple corridors, it can help to cross-check your close process against how you document [cross-border crypto settlement vs bank wires](/blog/cross-border-crypto-settlement-vs-bank-wires/), since timing differences between corridors often explain small residual variances at period end.
+
+## How this differs from your monthly per-payment evidence pack
+
+During the month, each payment you make or receive in USDT or USDC should already carry its own evidence: invoice number, counterparty wallet, transaction hash, and amount, as covered in guidance comparing [USDC vs USDT for supplier payments](/blog/usdc-vs-usdt-for-supplier-payments/). That per-payment record answers "did this specific invoice get paid correctly?"
+
+The month-end tie-out answers a different question: "does our total confirmed stablecoin position match what the sum of all those individual transactions implies it should be?" It is a batch-level control, not a transaction-level one, and it is the stage where:
+
+- Timing differences between broadcast and confirmation surface as reconciling items rather than individual payment issues
+- Desk tickets that were open mid-month either clear into the balance or remain flagged as unsettled
+- Suspense or clearing accounts used for in-transit stablecoin activity get reviewed and, where appropriate, cleared
+
+Running both processes — daily evidence packs and a monthly tie-out — gives you a control structure similar to the one most finance teams already use for bank accounts, just adapted to on-chain and provider-specific sources of truth.
+
+## Risks and limits of the stablecoin month-end close
+
+A stablecoin month-end close reduces the risk of unexplained variances, but it does not eliminate underlying risks that are specific to this asset type:
+
+- **Cut-off judgment calls remain subjective** unless your confirmation-threshold policy is written down and applied consistently; informal or ad hoc cut-off decisions are a common audit finding.
+- **Provider statement formats vary**, and a provider may change its export format or cut-off convention without notice, so periodic validation of the statement source is worthwhile.
+- **Accounting treatment of stablecoin holdings is jurisdiction- and standard-specific.** This article does not state how your stablecoin balances should be classified or measured on your balance sheet. Review published materials from your applicable accounting standard-setter, such as the IFRS Foundation's work on digital assets at ifrs.org, and confirm treatment with your own accountants or auditors.
+- **Regulatory expectations continue to evolve** across jurisdictions, including EU-level frameworks and FATF guidance on virtual assets (fatf-gafi.org); your close procedures should be reviewed periodically against current requirements rather than treated as fixed.
+- **On-chain data is not a substitute for internal controls.** A matching balance does not by itself confirm that funds were used for authorized business purposes; segregation of duties and approval trails remain necessary alongside the reconciliation.
+
+## Closing
+
+A disciplined stablecoin month-end close turns scattered wallet views, provider exports, and desk tickets into one reconciled position your subledger can stand behind — and it complements, rather than replaces, the per-payment evidence you already keep during the month.
+
+Open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border.
+
+*This material is for informational and educational purposes only. It is not legal, tax, investment, or financial advice. Cryptocurrency transactions involve operational, market, and compliance risk. Outcomes depend on your policies, counterparties, corridors, and applicable law. Readers should verify primary sources and internal controls as of the action date.*

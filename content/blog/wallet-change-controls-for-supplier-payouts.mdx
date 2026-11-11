@@ -1,0 +1,135 @@
+---
+title: "Wallet change controls for supplier payouts: stopping payment diversion"
+titleEn: "Wallet change controls for supplier payouts: stopping payment diversion"
+description: "A supplier wallet change control checklist: callback verification, dual approval, freezing old instructions, and test transfers to stop payment diversion."
+descriptionEn: "A supplier wallet change control checklist: callback verification, dual approval, freezing old instructions, and test transfers to stop payment diversion."
+datePublished: "2026-11-03"
+dateModified: "2026-11-03"
+author:
+  name: "Cryp2bus Editorial"
+  role: "Editorial"
+category: "Ops Playbooks"
+readTime: "8 min"
+coverImage: ""
+featured: false
+tags: ["supplier wallet change control", "Ops Playbooks", "business crypto", "2026"]
+tagsEn: ["supplier wallet change control", "Ops Playbooks", "business crypto", "2026"]
+faq:
+  - question: "What is a supplier wallet change control?"
+    answer: "A supplier wallet change control is the internal process your business follows whenever a vendor asks to update the crypto wallet address used for payouts. It typically includes out-of-band callback verification, dual approval, a temporary freeze on the old instructions, and a small test transfer before any full payment goes to the new address."
+  - question: "Why do wallet change requests get targeted by fraudsters?"
+    answer: "A wallet address update is a single field change that, if approved without verification, immediately redirects future payments. Attackers often compromise or spoof a vendor's email to request this change, because it does not require forging an invoice, a contract, or a bank's full KYC file — only convincing one approver to update a record."
+  - question: "Who should approve a change to a supplier's payout wallet?"
+    answer: "Best practice is dual approval: one person initiates or receives the request and performs callback verification, and a second, independent approver confirms the change in the vendor master before it becomes active. Neither person should be able to both request and approve the same change alone."
+  - question: "How do you verify a wallet change request is genuine?"
+    answer: "Use an out-of-band callback: contact the supplier through a phone number or contact already on file before the request came in — never a number or email address supplied in the change request itself. Confirm the change verbally with a known individual at the vendor, then document the call."
+  - question: "Should you send a full payment to a newly updated wallet immediately?"
+    answer: "No. Send a small test transfer first and confirm with the supplier, through the verified contact, that the test funds arrived and were recognized as a legitimate payment from your business before releasing the full invoice amount."
+  - question: "What should be recorded in the vendor master after a wallet change?"
+    answer: "Record the date of the change, who requested it, who performed callback verification, who gave second approval, the test transfer transaction reference, and an effective date for when the new wallet becomes the only valid payout destination."
+---
+
+Supplier wallet change control is the set of internal steps your business applies every time a vendor asks you to update the crypto address used for invoice payouts. It exists because a single unverified change to a payout address can redirect an entire payment — or several — to an attacker, with no way to reverse a confirmed on-chain transfer. The core controls are consistent across well-run treasury and accounts payable teams: verify the request out-of-band, require dual approval, freeze the old payout instruction during review, test with a small transfer before the full amount moves, and log everything on the vendor master record.
+
+This checklist focuses on prevention — what to do before a wallet change request is approved, not after funds have already been sent to the wrong address. If your business pays suppliers in USDT, USDC, or other assets as part of [paying business invoices with USDT](/blog/how-to-pay-business-invoices-with-usdt/), a documented wallet change process is one of the lowest-cost controls you can put in place against payment diversion.
+
+## Why wallet change requests are a common diversion vector
+
+Payment diversion fraud does not need a forged invoice or a compromised bank account. It needs one person inside your payable approval chain to accept a wallet address update without checking it. Attackers commonly use:
+
+1. A spoofed or lookalike email domain that mimics a known supplier contact.
+2. A compromised vendor mailbox, where the request comes from a genuinely hijacked but real account.
+3. A follow-up call from a number that is not the supplier's verified line, designed to pre-empt your callback.
+4. Urgency language — an overdue invoice, a new banking partner, a "please update before the next payment run" framing.
+5. Timing around known invoice cycles, so the request arrives just before a scheduled payout.
+
+None of these require technical access to your systems. They require exploiting a gap in your vendor master update process. A supplier wallet change control closes that gap by making verification mandatory and procedural rather than discretionary.
+
+![Team reviewing a payment approval checklist on a laptop](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80)
+
+## The five controls that stop most diversion attempts
+
+A working wallet change control does not need to be complex. It needs to be applied every time, without exception, regardless of how trusted the supplier relationship appears.
+
+| Control | What it does | Who owns it |
+|---|---|---|
+| Out-of-band callback verification | Confirms the request with a known contact, not the one supplied in the message | Accounts payable analyst |
+| Dual approval | Separates the person who receives the request from the person who activates it | AP lead + finance manager |
+| Freeze on old instructions | Prevents payouts to either address while the change is under review | Treasury/payments ops |
+| Test transfer | Sends a small amount first and confirms receipt before the full invoice is paid | Payments ops |
+| Vendor master note | Records the verification trail permanently against the supplier record | Vendor master administrator |
+
+Each row in this table maps to a specific failure mode. Skip the callback and you trust the request on its face. Skip dual approval and one compromised or careless employee can push the change through alone. Skip the freeze and a payment can slip through mid-review on autopilot. Skip the test transfer and the first confirmation that something is wrong is a supplier calling to say they never received payment.
+
+## Out-of-band callback: the verification step that matters most
+
+The single highest-value control in a supplier wallet change control process is the out-of-band callback. "Out-of-band" means using a communication channel that is different from, and independent of, the one carrying the change request.
+
+In practice:
+
+1. Never call a phone number provided in the same email or message that requested the wallet change.
+2. Pull the contact number from your existing vendor master record, a signed contract, or a prior, separately verified communication.
+3. Speak with a named individual you have dealt with before, not "whoever answers."
+4. Ask the contact to state the new wallet address verbally, and compare it character by character against what was submitted in writing.
+5. Document the date, time, call duration, and the name of the person you spoke with.
+
+If the supplier cannot be reached through the verified channel, do not approve the change. Treat an unreachable or evasive contact as a reason to pause, not a reason to proceed on the written request alone. This is also the point where it is worth checking whether the vendor has recently changed banking or payout details across multiple customers — a pattern sometimes visible if your [corporate crypto treasury basics](/blog/corporate-crypto-treasury-basics/) process includes periodic vendor data reviews.
+
+## Dual approval and freezing the old payout instruction
+
+Callback verification confirms the request is genuine. Dual approval confirms that activating the change is a separate decision from receiving it.
+
+The structure should look like this:
+
+- **Requester / first reviewer:** receives the change request and performs the out-of-band callback. This person cannot also be the one who flips the vendor master record live.
+- **Second approver:** reviews the callback documentation, confirms it is complete, and only then authorizes the update in the vendor master or payment system.
+- **System or process freeze:** from the moment a wallet change request is logged until the second approver signs off, no payout should be issued to either the old or the new address for that supplier. This closes the window where a payment run could execute on stale instructions mid-review, or where an attacker who also compromised the old address tries to extract value before the freeze is noticed.
+
+For businesses settling cross-border supplier payments in stablecoins rather than bank wires, this freeze period is often shorter than with traditional rails, since there is no multi-day clearing lag to absorb the review. See how settlement timing differs in [cross-border crypto vs bank wires](/blog/cross-border-crypto-settlement-vs-bank-wires/) for context on why faster settlement raises, rather than lowers, the importance of pre-payment controls.
+
+## Test transfer and the vendor master note
+
+Even after callback verification and dual approval, do not send the full invoice amount to a newly updated wallet on the first payment. Send a small test transfer and confirm it was received and recognized before releasing the remainder.
+
+A practical sequence:
+
+1. Send a test amount that is meaningful enough for the supplier to notice, but small relative to the full invoice.
+2. Ask the supplier, through the already-verified contact, to confirm the transaction hash or reference and the amount received.
+3. Confirm the test transfer cleared on the relevant network before proceeding.
+4. Release the balance of the payment only after confirmation.
+5. Record the test transaction reference permanently on the vendor master record.
+
+The vendor master note is the institutional memory of the whole process. At minimum it should capture: the date of the request, the name of the requester, who performed the callback and when, who gave second approval, the test transfer reference, and the effective date the new wallet became the sole valid payout destination for that supplier. This note matters later — if a dispute arises, or if auditors or your KYB reviewers ask how the change was verified, the note is your evidence trail, not a reconstructed memory.
+
+If your business routes larger or less frequent supplier settlements through an OTC desk rather than direct wallet-to-wallet transfers, the same verification discipline still applies before the desk is instructed to send funds — see [when businesses use OTC crypto desks](/blog/when-businesses-use-otc-crypto-desks/) for how that workflow typically fits into a payment approval chain.
+
+## Risks and limits of wallet change controls
+
+No checklist eliminates diversion risk entirely, and none of these controls should be read as a guarantee against fraud or loss. Some limits to keep in mind:
+
+- **Insider risk is not fully solved by dual approval** if the two approvers collude or if one role is consistently filled by the same two people without rotation.
+- **Callback verification depends on accurate baseline contact data.** If your vendor master already contains a compromised phone number, the callback step can be defeated at its source — periodic data hygiene matters.
+- **Test transfers reduce but do not remove exposure**, since a sufficiently patient attacker could theoretically confirm a small test transfer to maintain cover before a larger payment is diverted. Treat the test transfer as one layer, not a complete defense.
+- **On-chain transfers are generally irreversible** once confirmed, which is why prevention before release matters more than recovery after the fact.
+- **Freezing payout instructions can create operational friction** with legitimate, time-sensitive supplier changes — build a clear SLA for how quickly a verified change can be processed so finance teams are not incentivized to bypass the control under deadline pressure.
+
+These controls sit alongside, not instead of, your broader KYB and AML program. Regulatory references such as FATF's guidance on virtual assets (https://www.fatf-gafi.org) and general accounting treatment discussions from the IFRS Foundation (https://www.ifrs.org) provide useful background for how payment controls connect to wider compliance obligations, though neither body issues wallet-change-specific rules — this is an internal operational control, not a regulatory requirement in itself.
+
+## Practical checklist summary
+
+Use this as a quick reference for any supplier wallet change control request:
+
+1. Log the request with date, channel, and submitted new wallet address.
+2. Freeze payouts to the supplier's old and newly requested addresses pending review.
+3. Perform an out-of-band callback using a contact already on file, not one supplied in the request.
+4. Confirm the new wallet address verbally, character by character, with a known contact.
+5. Route the verified request to a second, independent approver for activation.
+6. Send a small test transfer and obtain confirmation of receipt through the verified contact.
+7. Release the full payment only after the test transfer is confirmed.
+8. Record the entire trail — requester, verifier, approver, test transaction reference, effective date — on the vendor master.
+
+If your accounts payable team is also comparing which stablecoin to standardize on for supplier payouts, pairing that decision with a documented change-control process is worth doing at the same time — see [USDC vs USDT for supplier payments](/blog/usdc-vs-usdt-for-supplier-payments/) for the underlying considerations.
+
+Open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border.
+
+*This material is for informational and educational purposes only. It is not legal, tax, investment, or financial advice. Cryptocurrency transactions involve operational, market, and compliance risk. Outcomes depend on your policies, counterparties, corridors, and applicable law. Readers should verify primary sources and internal controls as of the action date.*

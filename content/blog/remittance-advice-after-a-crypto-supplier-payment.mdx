@@ -1,0 +1,115 @@
+---
+title: "Remittance advice after a crypto supplier payment: what to send with the hash"
+titleEn: "Remittance advice after a crypto supplier payment: what to send with the hash"
+description: "A crypto payment remittance advice helps suppliers match stablecoin transfers to invoices. Learn what to include: hash, amount, network, and invoice refs."
+descriptionEn: "A crypto payment remittance advice helps suppliers match stablecoin transfers to invoices. Learn what to include: hash, amount, network, and invoice refs."
+datePublished: "2026-10-24"
+dateModified: "2026-10-24"
+author:
+  name: "Cryp2bus Editorial"
+  role: "Editorial"
+category: "Cross-border Payments"
+readTime: "8 min"
+coverImage: ""
+featured: false
+tags: ["crypto payment remittance advice", "Cross-border Payments", "business crypto", "2026"]
+tagsEn: ["crypto payment remittance advice", "Cross-border Payments", "business crypto", "2026"]
+faq:
+  - question: "What is a crypto payment remittance advice?"
+    answer: "It is a short document or message a payer sends to a supplier right after releasing a stablecoin or crypto payment. It lists the invoice numbers covered, the amount and asset sent, the network used, and the transaction hash or OTC desk ticket number, so the supplier's accounts receivable team can match the incoming funds to the correct open invoices."
+  - question: "Is a remittance advice the same as an invoice?"
+    answer: "No. An invoice is issued by the supplier before payment and requests funds. A remittance advice is issued by the payer after payment has been released, confirming what was paid, how, and against which invoice references. The two documents serve opposite directions in the payment cycle."
+  - question: "Why does a supplier need the transaction hash if they can see the funds arrive?"
+    answer: "Seeing a stablecoin balance increase does not tell a supplier who sent it or why. Many wallets receive multiple inbound transfers in a short window. The hash lets the supplier's finance team look up the exact transaction on a block explorer, confirm sender address, amount, and timestamp, and tie it unambiguously to the remittance advice and invoice."
+  - question: "What if the payment went through an OTC desk instead of a direct wallet transfer?"
+    answer: "When an OTC desk executes the transfer on your behalf, the on-chain hash may show the desk's omnibus wallet rather than your company's address. In that case, the remittance advice should reference the desk's settlement or ticket number alongside the hash, so the supplier can request confirmation from the desk if needed."
+  - question: "Which channel should be used to send remittance advice for crypto payments?"
+    answer: "Email to the supplier's accounts receivable contact is the most common and auditable channel, often with the information also entered into a shared ERP or accounts payable portal. Some corridors add a copy in the messaging thread used to coordinate the payment, but email or portal entry should remain the system of record."
+  - question: "Does a remittance advice replace accounting reconciliation?"
+    answer: "No. The remittance advice supports matching on the supplier side, but your own accounting team still needs to record the payment, reference the invoice, and reconcile wallet or exchange statements against your ledger, consistent with your applicable accounting framework."
+---
+
+A crypto payment remittance advice is the message you send to a supplier right after you release a stablecoin payment, confirming what you paid, which invoices it settles, and how the supplier can verify it on-chain. It is not the invoice itself and not a payment instruction — it is outbound confirmation sent after funds leave your wallet or your OTC desk executes the trade. At minimum it should include the invoice number(s), amount, asset (e.g., USDT or USDC), network (e.g., Tron, Ethereum, Polygon), and either a transaction hash or a desk ticket reference. Without this advice, a supplier receiving stablecoins from an unfamiliar address has no reliable way to match the transfer to an open invoice, which delays supplier confirmation and can stall your own payment-complete status in procurement systems.
+
+## Why crypto payments need a remittance advice at all
+
+Bank wires usually carry a payment reference field that travels with the transfer and lands directly in the supplier's bank statement. Crypto transfers do not work the same way. A transaction hash proves a transfer happened on a given network at a given time, but it does not carry invoice numbers, PO references, or free-text memos in a way most accounting teams can read without extra tooling.
+
+That gap is exactly what the remittance advice closes. It is the connective document between the technical fact of a blockchain transaction and the commercial fact of an invoice being paid. If you have already read how businesses [pay business invoices with USDT](/blog/how-to-pay-business-invoices-with-usdt/), this is the step that comes immediately after you click "send" — the confirmation your supplier's finance team is waiting for before they mark the invoice as settled.
+
+This matters more in cross-border corridors, where the supplier may be unfamiliar with your company's wallet addresses and where time zone gaps between release and confirmation can stretch a same-day settlement into a multi-day reconciliation question.
+
+## What belongs in a crypto payment remittance advice
+
+A usable remittance advice is short — usually one email or one structured record — but it needs specific fields. Vague advices ("payment sent, please confirm") create more back-and-forth than they save.
+
+1. **Supplier name and account reference** — exactly as it appears on your accounts payable record, to avoid any ambiguity if the supplier has multiple legal entities or bank/wallet profiles on file.
+2. **Invoice number(s) covered** — list every invoice the payment settles. If one transfer covers three invoices, state all three and the amount applied to each.
+3. **Amount and currency of record** — the invoice currency (e.g., EUR 18,400) alongside the stablecoin amount actually sent (e.g., 19,850 USDT), since the two will rarely match exactly once conversion and fees are applied.
+4. **Asset and network** — specify both the token (USDT, USDC, or another asset) and the network used (Tron/TRC-20, Ethereum/ERC-20, Polygon, Solana, etc.), because the same token can exist on multiple networks with different addresses and confirmation times.
+5. **Transaction hash or desk ticket number** — the on-chain hash for direct wallet-to-wallet transfers, or the settlement/ticket reference if an OTC desk executed the trade on your behalf, as covered in [when businesses use OTC crypto desks](/blog/when-businesses-use-otc-crypto-desks/).
+6. **Date and time of release (with time zone)** — blockchain confirmation times and your internal release time can diverge; stating both avoids disputes about which business day the payment counts toward.
+7. **Sender wallet address or desk identifier** — so the supplier can cross-check the inbound transaction against the correct originating address rather than guessing from multiple recent inbound transfers.
+
+![Finance team reviewing a payment confirmation on a laptop](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80)
+
+## A sample remittance advice layout
+
+Below is a minimal structure many ops teams adapt into an email template or an automated ERP export. The exact fields may vary by corridor and by whether the supplier reconciles manually or through accounting software.
+
+| Field | Example value | Why it matters |
+|---|---|---|
+| Invoice number(s) | INV-2026-0914, INV-2026-0915 | Lets AR apply one payment across multiple invoices |
+| Invoice currency amount | EUR 18,400.00 | Matches the supplier's own books of record |
+| Stablecoin amount sent | 19,850.00 USDT | Confirms actual settlement value after conversion |
+| Asset / network | USDT / Tron (TRC-20) | Prevents confusion with USDT on other networks |
+| Transaction hash | 0x9f3a...c71e (or TRC-20 equivalent) | Lets supplier verify on a block explorer |
+| Desk ticket (if OTC) | OTC-REF-55231 | Needed when hash shows an omnibus wallet |
+| Release date/time (UTC) | 2026-10-24, 14:05 UTC | Anchors the payment to a specific business day |
+| Sender identifier | Company wallet or desk account label | Helps match among multiple inbound transfers |
+| Channel used | Email to AR contact | Establishes an auditable paper trail |
+
+Treat this table as a baseline, not a rigid form. Some suppliers will want the advice attached as a PDF; others will accept a structured email or a line entry in a shared portal.
+
+## Choosing the channel to send it through
+
+The remittance advice only works if it reaches the right person quickly. A few practical patterns:
+
+- **Email to a named AR contact** remains the most common channel because it is timestamped, searchable, and easy to forward internally for audit purposes.
+- **Shared ERP or AP/AR portal entry** works well for recurring suppliers where both sides already use a common platform; it reduces email back-and-forth for repeat corridors.
+- **Messaging thread used to coordinate the deal** (for example, with an OTC desk or a payments contact) can carry a copy of the advice for speed, but should not replace the formal email or portal record, since messaging apps are harder to retrieve for later reconciliation.
+- **Automated webhook or API callback**, where available, can push the hash and invoice reference directly into the supplier's accounting system, cutting manual matching almost entirely — though this depends on both sides having compatible tooling.
+
+Whichever channel you pick, keep it consistent for a given supplier relationship. Switching channels invoice-by-invoice is one of the more common causes of "we never received a remittance advice" disputes.
+
+## How this differs from invoice fields and payment instructions
+
+It is worth being explicit about what a remittance advice is not. The original invoice, issued by the supplier, lists what is owed, the due date, and usually the wallet address or bank details for payment — that document was produced before any transfer happened. Payment instructions, if your company issues them internally, direct your own treasury or ops team on how to execute the transfer. The remittance advice is the only one of the three documents issued after the funds have moved, and its sole purpose is confirmation and matching, not instruction. If your team is still comparing settlement rails, [cross-border crypto vs bank wires](/blog/cross-border-crypto-settlement-vs-bank-wires/) covers how confirmation timing differs between the two.
+
+## Risks and limits to keep in mind
+
+A remittance advice reduces friction, but it does not eliminate every risk in a crypto supplier payment:
+
+- **It does not guarantee funds have been credited.** The supplier still needs to confirm the transaction has reached required confirmations on-chain before treating it as final, particularly on networks with longer confirmation windows.
+- **It is not proof of ownership of the invoice reference.** A remittance advice can be sent in error against the wrong invoice; suppliers should still verify amounts against their own records rather than accepting the advice at face value.
+- **Network or asset mismatches can still cause delays.** If the advice states USDC but the supplier's wallet only monitors a different network, manual follow-up will still be required.
+- **OTC settlements add an extra verification step.** When a desk ticket stands in for a direct hash, the supplier may need to request confirmation from the desk, which can add hours or a business day in cross-time-zone corridors.
+- **It does not replace internal accounting reconciliation.** Both payer and supplier still need to record the transaction in their own ledgers in line with applicable accounting standards; general digital-assets accounting context is available through IFRS materials at ifrs.org.
+
+None of this amounts to investment or trading guidance — these are operational matching risks, not market risks, and they apply regardless of whether the underlying asset's price is stable or volatile.
+
+## A practical checklist before you send the advice
+
+Before hitting send on a remittance advice, confirm:
+
+1. The invoice number(s) are correct and match what is open in the supplier's AR system, not an old or duplicate invoice.
+2. The asset and network stated match exactly what was sent — double-check network names that sound similar (e.g., Ethereum vs. a different EVM-compatible chain).
+3. The transaction hash resolves correctly on a public block explorer before you send it, to avoid forwarding a typo.
+4. The amount stated in stablecoins reflects what actually left your wallet or desk, including any fees, not the amount you intended to send.
+5. The advice is sent through the channel your supplier has confirmed they monitor for payment confirmations, not just whichever channel was most convenient.
+
+Teams that standardize this checklist into a template tend to see fewer "payment not received" queries, since most of those queries stem from mismatched references rather than an actual missing payment. For background on treasury-side controls that support this process, see [corporate crypto treasury basics](/blog/corporate-crypto-treasury-basics/), and for asset selection trade-offs that affect how remittance advices are worded, see [USDC vs USDT for supplier payments](/blog/usdc-vs-usdt-for-supplier-payments/).
+
+Open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border.
+
+*This material is for informational and educational purposes only. It is not legal, tax, investment, or financial advice. Cryptocurrency transactions involve operational, market, and compliance risk. Outcomes depend on your policies, counterparties, corridors, and applicable law. Readers should verify primary sources and internal controls as of the action date.*

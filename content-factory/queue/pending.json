@@ -1,0 +1,621 @@
+[
+  {
+    "id": 41,
+    "cluster": "Invoice Settlement",
+    "slug": "three-way-match-before-crypto-invoice-release",
+    "titleDe": "Three-way match before a crypto invoice release: PO, receipt, and bill",
+    "titleEn": "Three-way match before a crypto invoice release: PO, receipt, and bill",
+    "keywordDe": "crypto invoice three-way match",
+    "keywordEn": "crypto invoice three-way match",
+    "lsiKeywords": [
+      "purchase order match",
+      "goods receipt",
+      "invoice block",
+      "AP match result"
+    ],
+    "format": "Checklist",
+    "category": "Invoice Settlement",
+    "unsplashQuery": "purchase order receiving clipboard warehouse office",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 560,
+    "kd": 16,
+    "searchVolEn": 560,
+    "targetLength": 1500,
+    "taSegments": [
+      "finance",
+      "ops"
+    ],
+    "plannedDate": "2026-11-15",
+    "language": "EN",
+    "brief": "Checklist for matching the purchase order, goods receipt, and supplier invoice before a stablecoin payment is released. Cover who signs the match, which mismatches block release, and where the match result is stored on the payment file. This is a pre-release commercial match. Do not rewrite partial-payment reconciliation, and do not redesign maker-checker roles."
+  },
+  {
+    "id": 42,
+    "cluster": "Invoice Settlement",
+    "slug": "duplicate-crypto-invoice-controls",
+    "titleDe": "Duplicate crypto invoice controls: stopping a second payment before release",
+    "titleEn": "Duplicate crypto invoice controls: stopping a second payment before release",
+    "keywordDe": "duplicate crypto invoice payment",
+    "keywordEn": "duplicate crypto invoice payment",
+    "lsiKeywords": [
+      "duplicate invoice check",
+      "invoice number match",
+      "payment block",
+      "AP exception"
+    ],
+    "format": "Howto",
+    "category": "Invoice Settlement",
+    "unsplashQuery": "accountant comparing two invoices at a desk",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 490,
+    "kd": 14,
+    "searchVolEn": 490,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "accountants"
+    ],
+    "plannedDate": "2026-11-17",
+    "language": "EN",
+    "brief": "Show how accounts payable stops the same supplier invoice from being paid twice in a stablecoin. Cover invoice number, supplier, amount, and an existing hash or desk ticket, plus who may override a duplicate flag and what they file. This is prevention before release. Do not write the incident playbook for funds already sent to the wrong address."
+  },
+  {
+    "id": 43,
+    "cluster": "Invoice Settlement",
+    "slug": "one-hash-per-invoice-vs-batched-stablecoin-payment",
+    "titleDe": "One hash per invoice vs a batched stablecoin payment: how AP chooses",
+    "titleEn": "One hash per invoice vs a batched stablecoin payment: how AP chooses",
+    "keywordDe": "batched stablecoin supplier payment",
+    "keywordEn": "batched stablecoin supplier payment",
+    "lsiKeywords": [
+      "single transfer",
+      "invoice allocation",
+      "payment split",
+      "supplier matching"
+    ],
+    "format": "Comparison",
+    "category": "Invoice Settlement",
+    "unsplashQuery": "stacked invoices and payment documents on a desk",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 620,
+    "kd": 18,
+    "searchVolEn": 620,
+    "targetLength": 1600,
+    "taSegments": [
+      "ops",
+      "finance"
+    ],
+    "plannedDate": "2026-11-19",
+    "language": "EN",
+    "brief": "Compare paying each supplier invoice with its own stablecoin transfer versus grouping several invoices for the same payee into one transfer. Cover the allocation evidence accounting needs, what breaks the supplier's ability to match funds, and when the team refuses a batch. Do not write the weekly payable runbook, and do not design the remittance-advice message."
+  },
+  {
+    "id": 44,
+    "cluster": "Invoice Settlement",
+    "slug": "disputed-crypto-invoice-hold",
+    "titleDe": "Disputed crypto invoice hold: pausing a commercial disagreement before release",
+    "titleEn": "Disputed crypto invoice hold: pausing a commercial disagreement before release",
+    "keywordDe": "disputed crypto invoice hold",
+    "keywordEn": "disputed crypto invoice hold",
+    "lsiKeywords": [
+      "invoice dispute",
+      "quantity mismatch",
+      "commercial hold",
+      "supplier query"
+    ],
+    "format": "Explainer",
+    "category": "Invoice Settlement",
+    "unsplashQuery": "colleagues reviewing a disputed invoice in a meeting",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 410,
+    "kd": 13,
+    "searchVolEn": 410,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "partners"
+    ],
+    "plannedDate": "2026-11-21",
+    "language": "EN",
+    "brief": "Explain how AP pauses a stablecoin payable when the business disputes price, quantity, or receipt, before any funds move. Cover who opens the dispute, what evidence is attached, and how a resolved invoice returns to the batch. This is a commercial hold. Do not describe a compliance screening hold, and do not write the credit-note process for a payment that already settled."
+  },
+  {
+    "id": 45,
+    "cluster": "Corporate Treasury",
+    "slug": "quote-expiry-before-stablecoin-payable-release",
+    "titleDe": "Quote expiry before a stablecoin payable release: re-quote, hold, or slip",
+    "titleEn": "Quote expiry before a stablecoin payable release: re-quote, hold, or slip",
+    "keywordDe": "stablecoin quote expiry payable",
+    "keywordEn": "stablecoin quote expiry payable",
+    "lsiKeywords": [
+      "quote window",
+      "re-quote",
+      "fill difference",
+      "release hold"
+    ],
+    "format": "Howto",
+    "category": "Corporate Treasury",
+    "unsplashQuery": "finance desk clock and quote sheet",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 530,
+    "kd": 16,
+    "searchVolEn": 530,
+    "targetLength": 1500,
+    "taSegments": [
+      "finance",
+      "ops"
+    ],
+    "plannedDate": "2026-11-23",
+    "language": "EN",
+    "brief": "Explain the decision when a fiat-to-stablecoin quote expires before the payable batch is released. Cover who notices, when treasury re-quotes, when the batch is held, and when the run slips to the next cycle. Note what is recorded if the later fill differs from the expired quote. Do not size a liquidity buffer, do not predict prices, and do not give trading or investment advice."
+  },
+  {
+    "id": 46,
+    "cluster": "Corporate Treasury",
+    "slug": "stablecoin-sweep-after-a-payable-run",
+    "titleDe": "Stablecoin sweep after a payable run: moving the unused operating balance",
+    "titleEn": "Stablecoin sweep after a payable run: moving the unused operating balance",
+    "keywordDe": "stablecoin sweep after payables",
+    "keywordEn": "stablecoin sweep after payables",
+    "lsiKeywords": [
+      "operating balance",
+      "residual balance",
+      "treasury sweep",
+      "wallet transfer"
+    ],
+    "format": "Checklist",
+    "category": "Corporate Treasury",
+    "unsplashQuery": "treasury analyst moving balances on a laptop",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 370,
+    "kd": 12,
+    "searchVolEn": 370,
+    "targetLength": 1500,
+    "taSegments": [
+      "finance",
+      "compliance"
+    ],
+    "plannedDate": "2026-11-25",
+    "language": "EN",
+    "brief": "Checklist for moving unused stablecoins from the operating wallet back to the reserve wallet after a payable run. Cover who approves the sweep, what residual stays behind for fees, and the evidence both wallets keep. Do not redraw the wallet-segregation policy, and do not discuss yield, rewards, or investing the residual."
+  },
+  {
+    "id": 47,
+    "cluster": "Corporate Treasury",
+    "slug": "cash-forecast-line-for-stablecoin-payables",
+    "titleDe": "Cash forecast line for stablecoin payables: dating the fiat funding need",
+    "titleEn": "Cash forecast line for stablecoin payables: dating the fiat funding need",
+    "keywordDe": "stablecoin payable cash forecast",
+    "keywordEn": "stablecoin payable cash forecast",
+    "lsiKeywords": [
+      "cash flow line",
+      "funding date",
+      "fiat outflow",
+      "payable calendar"
+    ],
+    "format": "Explainer",
+    "category": "Corporate Treasury",
+    "unsplashQuery": "cash flow forecast spreadsheet on a meeting table",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 480,
+    "kd": 15,
+    "searchVolEn": 480,
+    "targetLength": 1600,
+    "taSegments": [
+      "finance"
+    ],
+    "plannedDate": "2026-11-27",
+    "language": "EN",
+    "brief": "Explain how a treasury cash forecast shows the fiat that must be available to buy stablecoins for a known payable run. Cover the funding date versus the supplier release date, and who updates the line when an invoice slips or is held. Do not predict asset prices, do not give a buffer-sizing formula, and do not write the settlement-day clock."
+  },
+  {
+    "id": 48,
+    "cluster": "Corporate Treasury",
+    "slug": "approved-payout-address-list",
+    "titleDe": "Approved payout address list: the release-day whitelist check",
+    "titleEn": "Approved payout address list: the release-day whitelist check",
+    "keywordDe": "approved crypto payout address list",
+    "keywordEn": "approved crypto payout address list",
+    "lsiKeywords": [
+      "address whitelist",
+      "release check",
+      "payee address",
+      "treasury control"
+    ],
+    "format": "Howto",
+    "category": "Corporate Treasury",
+    "unsplashQuery": "checklist on a laptop in a finance office",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 440,
+    "kd": 14,
+    "searchVolEn": 440,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "finance"
+    ],
+    "plannedDate": "2026-11-29",
+    "language": "EN",
+    "brief": "Explain how treasury keeps the supplier addresses that may receive a payout and checks the payable against that list on release day. Cover who may add an address, how a mismatch stops release, and where the check is stored. Do not write the out-of-band wallet-change callback, and do not list the vendor-master fields as the subject of the article."
+  },
+  {
+    "id": 49,
+    "cluster": "Cross-border Payments",
+    "slug": "paying-the-contracting-entity-not-the-affiliate",
+    "titleDe": "Paying the contracting entity, not the affiliate: legal payee checks on crypto invoices",
+    "titleEn": "Paying the contracting entity, not the affiliate: legal payee checks on crypto invoices",
+    "keywordDe": "crypto invoice legal payee",
+    "keywordEn": "crypto invoice legal payee",
+    "lsiKeywords": [
+      "contracting entity",
+      "affiliate wallet",
+      "beneficiary name",
+      "invoice party"
+    ],
+    "format": "Checklist",
+    "category": "Cross-border Payments",
+    "unsplashQuery": "contract review documents on a conference table",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 510,
+    "kd": 15,
+    "searchVolEn": 510,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "compliance"
+    ],
+    "plannedDate": "2026-12-01",
+    "language": "EN",
+    "brief": "Checklist for confirming the wallet on a crypto invoice belongs to the legal entity named on the contract, not a sister company or an employee. Cover the name match, a documented exception path, and when AP refuses the payment. Do not rewrite the first-time supplier onboarding questionnaire, and do not give tax advice."
+  },
+  {
+    "id": 50,
+    "cluster": "Cross-border Payments",
+    "slug": "fx-rate-lock-for-local-currency-stablecoin-invoices",
+    "titleDe": "FX rate lock for local-currency invoices settled in a USD stablecoin",
+    "titleEn": "FX rate lock for local-currency invoices settled in a USD stablecoin",
+    "keywordDe": "stablecoin invoice FX rate lock",
+    "keywordEn": "stablecoin invoice FX rate lock",
+    "lsiKeywords": [
+      "invoice currency",
+      "rate source",
+      "rate timestamp",
+      "settlement amount"
+    ],
+    "format": "Explainer",
+    "category": "Cross-border Payments",
+    "unsplashQuery": "exchange rate spreadsheet finance workspace",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 570,
+    "kd": 17,
+    "searchVolEn": 570,
+    "targetLength": 1600,
+    "taSegments": [
+      "finance",
+      "accountants"
+    ],
+    "plannedDate": "2026-12-03",
+    "language": "EN",
+    "brief": "Explain how AP records the rate and timestamp that turn a local-currency invoice into the USD stablecoin amount to send. Cover who locks the rate, how long the lock stays valid, and what is stored if a later rate is used. Do not compare stablecoin assets, do not give FX trading advice, and do not write a country-by-country corridor checklist."
+  },
+  {
+    "id": 51,
+    "cluster": "Cross-border Payments",
+    "slug": "proof-of-payment-pack-for-crypto-suppliers",
+    "titleDe": "Proof-of-payment pack for crypto suppliers: what AP sends when asked later",
+    "titleEn": "Proof-of-payment pack for crypto suppliers: what AP sends when asked later",
+    "keywordDe": "crypto supplier proof of payment",
+    "keywordEn": "crypto supplier proof of payment",
+    "lsiKeywords": [
+      "payment evidence pack",
+      "transaction record",
+      "desk confirmation",
+      "supplier request"
+    ],
+    "format": "Howto",
+    "category": "Cross-border Payments",
+    "unsplashQuery": "document folder and payment receipt on a desk",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 390,
+    "kd": 12,
+    "searchVolEn": 390,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "partners"
+    ],
+    "plannedDate": "2026-12-05",
+    "language": "EN",
+    "brief": "Show how AP assembles a proof-of-payment pack when a supplier or the supplier's auditor asks after a stablecoin payout. Cover the invoice, amount, asset, network, hash or desk ticket, and a pointer to the remittance already sent. This answers a later request. Do not write the remittance advice sent at release, and do not write the internal accounting handoff."
+  },
+  {
+    "id": 52,
+    "cluster": "Cross-border Payments",
+    "slug": "supplier-payment-status-replies-for-crypto",
+    "titleDe": "Supplier payment status replies for crypto: paid, in batch, held, or still open",
+    "titleEn": "Supplier payment status replies for crypto: paid, in batch, held, or still open",
+    "keywordDe": "crypto supplier payment status",
+    "keywordEn": "crypto supplier payment status",
+    "lsiKeywords": [
+      "payment inquiry",
+      "AP status reply",
+      "in batch",
+      "unpaid invoice"
+    ],
+    "format": "Explainer",
+    "category": "Cross-border Payments",
+    "unsplashQuery": "accounts payable specialist replying to email",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 450,
+    "kd": 13,
+    "searchVolEn": 450,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "partners"
+    ],
+    "plannedDate": "2026-12-07",
+    "language": "EN",
+    "brief": "Explain the statuses AP uses when a supplier asks whether a crypto invoice has been paid, and who is allowed to answer. Cover paid, in the current batch, held, and still open, and which evidence may be shared with the supplier. Do not redefine on-chain confirmation rules, and do not turn the article into the internal exception queue for unconfirmed hashes."
+  },
+  {
+    "id": 53,
+    "cluster": "Compliance",
+    "slug": "wallet-address-screening-before-crypto-release",
+    "titleDe": "Wallet address screening before a crypto release: hits, clears, and the file",
+    "titleEn": "Wallet address screening before a crypto release: hits, clears, and the file",
+    "keywordDe": "crypto wallet address screening",
+    "keywordEn": "crypto wallet address screening",
+    "lsiKeywords": [
+      "address screening",
+      "sanctions hit",
+      "false match",
+      "release file"
+    ],
+    "format": "Checklist",
+    "category": "Compliance",
+    "unsplashQuery": "compliance analyst reviewing a screening result",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 600,
+    "kd": 19,
+    "searchVolEn": 600,
+    "targetLength": 1500,
+    "taSegments": [
+      "compliance",
+      "ops"
+    ],
+    "plannedDate": "2026-12-09",
+    "language": "EN",
+    "brief": "Checklist for screening the destination wallet address before a stablecoin payable is released. Cover when the screen runs, what a hit does to the batch, how a false match is cleared, and where the result is filed. Do not rewrite periodic screening of the supplier as a legal entity, and do not describe how to bypass a screen."
+  },
+  {
+    "id": 54,
+    "cluster": "Compliance",
+    "slug": "crypto-payment-policy-exception-log",
+    "titleDe": "Crypto payment policy exceptions: who can waive a control, and for how long",
+    "titleEn": "Crypto payment policy exceptions: who can waive a control, and for how long",
+    "keywordDe": "crypto payment policy exception",
+    "keywordEn": "crypto payment policy exception",
+    "lsiKeywords": [
+      "control waiver",
+      "exception expiry",
+      "one-time approval",
+      "exception log"
+    ],
+    "format": "Howto",
+    "category": "Compliance",
+    "unsplashQuery": "approval form and logbook on an office desk",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 420,
+    "kd": 15,
+    "searchVolEn": 420,
+    "targetLength": 1500,
+    "taSegments": [
+      "compliance",
+      "ops"
+    ],
+    "plannedDate": "2026-12-11",
+    "language": "EN",
+    "brief": "Explain a log for a one-time waiver of a crypto payment control before funds move, such as a documented name mismatch or a deferred test transfer. Cover who can approve the waiver, the expiry, the evidence attached, and how an open waiver is reviewed before the next cycle. Do not describe how to evade screening or sanctions checks, and do not rewrite the compliance-hold sequence."
+  },
+  {
+    "id": 55,
+    "cluster": "Compliance",
+    "slug": "internal-audit-sample-of-crypto-payment-files",
+    "titleDe": "Internal audit sample of crypto payment files: what a reviewer pulls",
+    "titleEn": "Internal audit sample of crypto payment files: what a reviewer pulls",
+    "keywordDe": "crypto payment internal audit sample",
+    "keywordEn": "crypto payment internal audit sample",
+    "lsiKeywords": [
+      "audit sample",
+      "evidence pack",
+      "missing item",
+      "control test"
+    ],
+    "format": "Howto",
+    "category": "Compliance",
+    "unsplashQuery": "internal auditor sampling files in an office",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 360,
+    "kd": 13,
+    "searchVolEn": 360,
+    "targetLength": 1500,
+    "taSegments": [
+      "compliance",
+      "accountants"
+    ],
+    "plannedDate": "2026-12-13",
+    "language": "EN",
+    "brief": "Describe how an internal reviewer samples crypto supplier payments and which documents they expect in each file. Cover a sample method the team can explain, follow-up on a missing item, and how a finding is logged. Do not invent a legal retention period, do not claim an audit opinion, and do not give legal advice."
+  },
+  {
+    "id": 56,
+    "cluster": "Compliance",
+    "slug": "access-review-for-crypto-payment-release-rights",
+    "titleDe": "Access review for crypto payment release rights: who can still send",
+    "titleEn": "Access review for crypto payment release rights: who can still send",
+    "keywordDe": "crypto payment access review",
+    "keywordEn": "crypto payment access review",
+    "lsiKeywords": [
+      "user access review",
+      "release permission",
+      "joiner mover leaver",
+      "privileged access"
+    ],
+    "format": "Checklist",
+    "category": "Compliance",
+    "unsplashQuery": "access permissions review on a laptop screen",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 400,
+    "kd": 14,
+    "searchVolEn": 400,
+    "targetLength": 1500,
+    "taSegments": [
+      "compliance",
+      "ops"
+    ],
+    "plannedDate": "2026-12-15",
+    "language": "EN",
+    "brief": "Checklist for a periodic review of who can create, approve, or release a business crypto payment. Cover joiners, movers, and leavers, evidence that the review happened, and how a leftover permission is removed. Do not redesign the maker-checker model, and do not review custody products or key ceremonies."
+  },
+  {
+    "id": 57,
+    "cluster": "Ops Playbooks",
+    "slug": "backup-operator-for-the-stablecoin-payable-run",
+    "titleDe": "Backup operator for the stablecoin payable run: handover when the owner is out",
+    "titleEn": "Backup operator for the stablecoin payable run: handover when the owner is out",
+    "keywordDe": "stablecoin payable backup operator",
+    "keywordEn": "stablecoin payable backup operator",
+    "lsiKeywords": [
+      "holiday cover",
+      "run handover",
+      "named deputy",
+      "release calendar"
+    ],
+    "format": "Howto",
+    "category": "Ops Playbooks",
+    "unsplashQuery": "colleague handover notes on a notebook",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 380,
+    "kd": 12,
+    "searchVolEn": 380,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "finance"
+    ],
+    "plannedDate": "2026-12-17",
+    "language": "EN",
+    "brief": "Explain how the team names a deputy who can run the stablecoin payable cycle when the primary operator is away. Cover the handover note, which approvals the deputy may not skip, and how the absence is recorded on the run file. Assume the weekly runbook already exists. Do not rewrite that runbook."
+  },
+  {
+    "id": 58,
+    "cluster": "Ops Playbooks",
+    "slug": "retiring-a-supplier-crypto-payment-instruction",
+    "titleDe": "Retiring a supplier crypto payment instruction: block, close, and keep history",
+    "titleEn": "Retiring a supplier crypto payment instruction: block, close, and keep history",
+    "keywordDe": "retire supplier crypto payment instruction",
+    "keywordEn": "retire supplier crypto payment instruction",
+    "lsiKeywords": [
+      "vendor block",
+      "closed payee",
+      "instruction history",
+      "AP master"
+    ],
+    "format": "Checklist",
+    "category": "Ops Playbooks",
+    "unsplashQuery": "closed vendor file in an archive cabinet",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 430,
+    "kd": 14,
+    "searchVolEn": 430,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "accountants"
+    ],
+    "plannedDate": "2026-12-19",
+    "language": "EN",
+    "brief": "Checklist for stopping future crypto payments when a supplier relationship ends or an instruction is replaced. Cover blocking the old address, keeping history for payments already made, and who can reopen the instruction. This is retirement of an instruction. Do not write the in-life wallet-change control, and do not write the incident playbook for a payment already sent."
+  },
+  {
+    "id": 59,
+    "cluster": "Ops Playbooks",
+    "slug": "erp-fields-when-there-is-no-crypto-module",
+    "titleDe": "ERP fields when there is no crypto module: where AP records the hash",
+    "titleEn": "ERP fields when there is no crypto module: where AP records the hash",
+    "keywordDe": "ERP crypto payment fields",
+    "keywordEn": "ERP crypto payment fields",
+    "lsiKeywords": [
+      "payment reference field",
+      "hash attachment",
+      "side log",
+      "AP subledger"
+    ],
+    "format": "Explainer",
+    "category": "Ops Playbooks",
+    "unsplashQuery": "accounts payable screen on an office monitor",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 350,
+    "kd": 13,
+    "searchVolEn": 350,
+    "targetLength": 1600,
+    "taSegments": [
+      "accountants",
+      "ops"
+    ],
+    "plannedDate": "2026-12-21",
+    "language": "EN",
+    "brief": "Explain practical places a standard ERP or accounts-payable tool can store the asset, network, and transaction hash when it has no crypto module. Cover a reference field, an attachment, and a side log, and who ties those records back to the invoice. Do not specify a vendor-master field list, and do not recommend a software product."
+  },
+  {
+    "id": 60,
+    "cluster": "Ops Playbooks",
+    "slug": "payable-run-after-action-review",
+    "titleDe": "Payable-run after-action review: exceptions, misses, and the next cycle",
+    "titleEn": "Payable-run after-action review: exceptions, misses, and the next cycle",
+    "keywordDe": "stablecoin payable after action review",
+    "keywordEn": "stablecoin payable after action review",
+    "lsiKeywords": [
+      "run retrospective",
+      "exception log",
+      "missed invoice",
+      "next cycle"
+    ],
+    "format": "Howto",
+    "category": "Ops Playbooks",
+    "unsplashQuery": "team notes on a whiteboard after a meeting",
+    "status": "pending",
+    "priority": "medium",
+    "searchVolDe": 330,
+    "kd": 11,
+    "searchVolEn": 330,
+    "targetLength": 1500,
+    "taSegments": [
+      "ops",
+      "finance"
+    ],
+    "plannedDate": "2026-12-23",
+    "language": "EN",
+    "brief": "Describe a short after-action review the operations owner holds after a stablecoin payable run. Cover which exceptions to list, invoices that missed the batch, and the single change written down for the next cycle. Do not turn the article into a month-end balance tie-out, and do not size a liquidity buffer."
+  }
+]

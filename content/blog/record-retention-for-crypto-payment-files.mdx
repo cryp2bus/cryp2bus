@@ -1,0 +1,130 @@
+---
+title: "Record retention for crypto payment files: what the evidence pack should keep"
+titleEn: "Record retention for crypto payment files: what the evidence pack should keep"
+description: "A guide to crypto payment record retention: which artifacts belong in the evidence pack, who owns the file, and what triggers a review."
+descriptionEn: "A guide to crypto payment record retention: which artifacts belong in the evidence pack, who owns the file, and what triggers a review."
+datePublished: "2026-10-28"
+dateModified: "2026-10-28"
+author:
+  name: "Cryp2bus Editorial"
+  role: "Editorial"
+category: "Compliance"
+readTime: "8 min"
+coverImage: ""
+featured: false
+tags: ["crypto payment record retention", "Compliance", "business crypto", "2026"]
+tagsEn: ["crypto payment record retention", "Compliance", "business crypto", "2026"]
+faq:
+  - question: "What is crypto payment record retention?"
+    answer: "Crypto payment record retention is the practice of keeping a complete, organized file of artifacts tied to a business crypto payment — the invoice, internal approval, wallet details used that day, transaction hash or desk ticket, fee line, and screening result — so the payment can be reconstructed and reviewed later. It follows your organization's own retention policy and applicable law; it is not a fixed legal period set by this article."
+  - question: "How long should a business keep crypto payment records?"
+    answer: "There is no single universal period. Retention duration depends on your internal records policy, your corporate and tax rules, and any sector-specific obligations that apply to your business. Consult your controller, auditor, and legal counsel to set a documented retention schedule rather than relying on a default assumption."
+  - question: "Who should own the crypto payment evidence file?"
+    answer: "Most organizations assign a named retention owner — typically a controller, compliance officer, or finance operations lead — who is responsible for collecting, indexing, and storing the file, and for producing it on request during an audit or dispute."
+  - question: "Is a transaction hash enough evidence on its own?"
+    answer: "No. A transaction hash confirms that a transfer occurred on-chain, but it does not show the invoice it relates to, who approved it, which wallet address was used, or whether screening was performed. The hash is one artifact among several in a complete evidence pack."
+  - question: "What should trigger a review of the retention file?"
+    answer: "Common triggers include an external audit request, a counterparty dispute over a payment, a regulatory inquiry, a change in vendor or wallet details, or a scheduled periodic internal review defined in your records policy."
+  - question: "Does record retention replace day-of accounting reconciliation?"
+    answer: "No. The accounting handoff reconciles the payment into your ledger on the day it happens. The retention file is the longer-term archive that preserves the supporting evidence after that handoff is complete, so it can be retrieved later."
+---
+
+Crypto payment record retention is the discipline of keeping a defined set of artifacts — invoice, approval, wallet details, transaction hash, fee line, and screening result — organized and accessible after a business crypto payment settles, so the payment can be reconstructed during an audit, dispute, or regulatory inquiry. This is distinct from the day-of accounting handoff that reconciles the payment into your ledger. The handoff closes the books for that day; the retention file is the archive that proves what happened, who approved it, and which controls were applied, for as long as your internal policy and applicable law require you to keep it.
+
+This article describes what typically goes into that archive, who should own it, and what should trigger a review. It does not set a retention period for you — that decision belongs to your controller, your auditor, and your counsel, informed by your jurisdiction and sector.
+
+## Why a separate evidence pack matters for crypto payments
+
+A bank wire leaves a fairly standard audit trail: a SWIFT or SEPA reference, a bank statement line, and a remittance note. A crypto payment leaves a different kind of trail — a network transaction hash, a wallet address that may or may not be reused, and often a desk ticket if the payment was sized through an OTC counterparty rather than executed directly on an exchange.
+
+Because that trail is split across internal systems (your invoicing tool, your approval workflow, your treasury or exchange account) and external systems (the blockchain itself, and possibly a liquidity desk), nothing single source captures the full picture. If you only keep the hash, you can prove a transfer occurred but not why, for whom, or under what approval. If you only keep the invoice, you have the commercial intent but no proof of execution. The evidence pack exists to close that gap by holding every artifact together, indexed to one payment.
+
+Frameworks such as FATF's guidance on virtual assets (https://www.fatf-gafi.org) describe the general expectation that regulated entities maintain records sufficient to reconstruct transactions for authorities. How you implement that for crypto-specific records is a matter of internal policy design, not something this article prescribes as law.
+
+## What belongs in the crypto payment evidence pack
+
+The following artifacts are commonly treated as the minimum components of a complete file. Which ones apply to you, and how long you keep them, should be set in your own records policy.
+
+1. **The invoice itself** — the original supplier or customer invoice, including invoice number, amount, currency, and payment terms, as referenced in guidance such as [Pay business invoices with USDT](/blog/how-to-pay-business-invoices-with-usdt/).
+2. **The internal approval record** — who authorized the payment, at what amount, and under which approval threshold or dual-control rule.
+3. **The wallet details used that day** — the destination address, the asset (for example USDT or USDC, as compared in [USDC vs USDT for supplier payments](/blog/usdc-vs-usdt-for-supplier-payments/)), and the network used, since address reuse is not guaranteed.
+4. **The transaction hash or desk ticket** — the on-chain reference for a direct transfer, or the execution ticket if the payment was sized through an OTC desk as described in [When businesses use OTC crypto desks](/blog/when-businesses-use-otc-crypto-desks/).
+5. **The fee line** — network fee, desk spread, or conversion fee charged on that specific payment, separate from the principal amount.
+6. **The screening result** — the outcome of any wallet or counterparty screening performed before the funds moved, including the screening tool used and the date it ran.
+
+![Filing cabinet drawers representing an archive](https://images.unsplash.com/photo-1568667256549-094345857637?w=1200&q=80)
+
+## Mapping the artifacts to a retention table
+
+A simple table helps a retention owner see at a glance which artifact answers which question later, during a review.
+
+| Artifact | Question it answers | Typical source system |
+|---|---|---|
+| Invoice | What was owed, to whom, and on what terms | Invoicing or ERP system |
+| Approval record | Who authorized the payment and under what limit | Internal workflow or approval tool |
+| Wallet details used that day | Which address and network received the funds | Treasury or payment platform |
+| Hash or desk ticket | Whether and when the transfer executed | Blockchain explorer / OTC desk confirmation |
+| Fee line | What the payment actually cost beyond principal | Treasury or desk statement |
+| Screening result | Whether the counterparty or address passed checks | Screening tool export |
+
+This table is a starting structure, not a template to copy without adaptation — your own file naming, storage system, and access controls should reflect your organization's records policy and any sector rules that apply to you.
+
+## Naming a retention owner
+
+An evidence pack without a named owner tends to degrade over time — files get split across people's inboxes, naming conventions drift, and nobody can confirm the pack is complete when an auditor asks for it six months later.
+
+A retention owner is typically a specific role, not a general "finance team" assignment. In many organizations this is a controller or a compliance officer who is accountable for:
+
+- Confirming each of the six artifacts above exists before the file is marked complete.
+- Storing the file in a system with access logging, separate from day-to-day working folders.
+- Producing the file on request during an audit, dispute, or regulatory inquiry.
+- Flagging gaps — for example, a missing screening result — back to the person who processed the payment.
+
+Treasury teams managing recurring supplier payments in crypto, as outlined in [Corporate crypto treasury basics](/blog/corporate-crypto-treasury-basics/), often build this ownership into the same policy that governs wallet management and approval thresholds, rather than treating retention as an afterthought.
+
+## What should trigger a review
+
+A retention file is not meant to sit untouched indefinitely without anyone checking it is still complete and correctly indexed. Common review triggers include:
+
+- An external audit or regulatory information request naming a specific payment or counterparty.
+- A counterparty dispute over whether a payment was sent, received, or correctly sized.
+- A change to the wallet details or vendor information associated with a recurring payment.
+- A scheduled periodic review built into your internal records policy (for example, quarterly or annual, as you define it).
+- Migration to a new treasury, accounting, or screening system, where historical files need to be verified before transfer.
+
+When cross-border settlement is involved, reviewers sometimes also compare the crypto evidence pack against the kind of documentation a bank wire would have generated, as discussed in [Cross-border crypto vs bank wires](/blog/cross-border-crypto-settlement-vs-bank-wires/), to confirm nothing was left out simply because the rail was different.
+
+## This is the archive, not the day-of handoff
+
+It is worth repeating the distinction the brief for this article makes: the accounting handoff is what happens on the day of payment — reconciling the transaction into your ledger, booking the fee, matching the invoice to the outflow. The retention file described here is what remains afterward, built to be retrieved later, possibly long after the people who processed the payment have moved on.
+
+Conflating the two can create gaps. A ledger entry that reconciles cleanly on day one does not guarantee that the wallet details, screening result, and approval record are still attached and retrievable a year later. Building the evidence pack as a distinct step — with its own owner and its own completeness check — closes that gap.
+
+## Risks and limits of a retention program
+
+A retention file reduces the risk of being unable to reconstruct a payment, but it does not eliminate every risk, and it is not a substitute for legal or tax advice:
+
+- **No fixed retention period is implied here.** How long you keep these records depends on your internal policy, your jurisdiction, and your sector. Confirm this with your controller and counsel rather than assuming a default.
+- **Incomplete files are still possible.** Naming an owner reduces but does not guarantee completeness; periodic spot checks are a common complement.
+- **Cross-reference with external standards.** Organizations citing broader accounting or tax treatment for digital assets sometimes reference overview materials from the IFRS Foundation (https://www.ifrs.org) or the OECD's crypto-asset work (https://www.oecd.org) for context, but these are general references, not a substitute for your own policy.
+- **Jurisdictional rules differ.** Entities operating under frameworks referenced in EU institutional materials on MiCA, or under FATF-aligned national rules, may face different documentation expectations; this article does not assert a specific legal retention period under any of them.
+- **Screening tools and desk tickets vary by provider.** The exact format of a screening result or a desk ticket depends on which tool or counterparty you use, and your file should be adapted accordingly.
+
+## A practical checklist for building the file
+
+Use this as a working checklist when assembling or auditing a crypto payment evidence pack, adapting it to your own policy:
+
+1. Confirm the invoice is attached and matches the payment amount and currency.
+2. Confirm the approval record names the approver and the authorized amount.
+3. Confirm the wallet address and network used that day are recorded, not assumed from a prior payment.
+4. Confirm the transaction hash (or desk ticket, if OTC) is logged and matches the payment date.
+5. Confirm the fee line is itemized separately from the principal.
+6. Confirm the screening result is attached, dated, and references the tool used.
+7. Confirm the file is stored under the named retention owner's system, not a personal folder.
+8. Confirm the file is indexed in a way that a reviewer trigger (audit, dispute, inquiry) can locate it quickly.
+
+If any item is missing, flag it back to the retention owner before closing the file as complete.
+
+To put a consistent process behind these payments and their supporting records, open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border.
+
+*This material is for informational and educational purposes only. It is not legal, tax, investment, or financial advice. Cryptocurrency transactions involve operational, market, and compliance risk. Outcomes depend on your policies, counterparties, corridors, and applicable law. Readers should verify primary sources and internal controls as of the action date.*

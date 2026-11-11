@@ -1,0 +1,53 @@
+# Cryp2bus (Cryptobus)
+
+> Educational explainers on business crypto settlements, invoice payments, treasury, and compliance. Cryp2bus is operated by TELEPORT FINANCIAL SERVICES s.r.o. (VASP, Czech Republic, IČO 21369909) under a white-label agreement with VS Digital Europe Ltd., a crypto-asset service provider authorised under MiCA by the Malta Financial Services Authority (LEI 984500G55775959B9C37). Cryp2bus provides crypto transaction infrastructure for businesses — not investment advice.
+
+Site: https://cryp2bus.com/
+Blog: https://cryp2bus.com/blog/
+
+## Articles
+
+- [Accounting handoff for crypto settlements: evidence finance needs](https://cryp2bus.com/blog/accounting-handoff-for-crypto-settlements/)
+- [AML controls for crypto invoice payments: a practical control map](https://cryp2bus.com/blog/aml-controls-for-crypto-invoice-payments/)
+- [Compliance hold before a crypto payable release: pause, review, and restart](https://cryp2bus.com/blog/compliance-hold-before-crypto-payable-release/)
+- [Converting fiat to crypto for supplier payouts: timing and quotes](https://cryp2bus.com/blog/converting-fiat-to-crypto-for-supplier-payouts/)
+- [Corporate crypto treasury basics: wallets, conversion, and controls](https://cryp2bus.com/blog/corporate-crypto-treasury-basics/)
+- [Credit notes after stablecoin settlement: reversing a paid crypto invoice](https://cryp2bus.com/blog/credit-notes-after-stablecoin-settlement/)
+- [Cross-border crypto settlement vs bank wires: cost, speed, and ops](https://cryp2bus.com/blog/cross-border-crypto-settlement-vs-bank-wires/)
+- [How to pay business invoices with USDT: a practical settlement checklist](https://cryp2bus.com/blog/how-to-pay-business-invoices-with-usdt/)
+- [Hybrid settlement day: aligning bank cut-offs with on-chain release](https://cryp2bus.com/blog/hybrid-settlement-day-bank-cutoff-and-on-chain/)
+- [Incident playbook: wrong wallet or wrong asset on a business payment](https://cryp2bus.com/blog/incident-playbook-wrong-wallet-or-wrong-asset/)
+- [Intercompany stablecoin settlement: documenting transfers between group entities](https://cryp2bus.com/blog/intercompany-stablecoin-settlement/)
+- [Invoice reference fields for crypto payments: what to put on the bill](https://cryp2bus.com/blog/invoice-reference-fields-for-crypto-payments/)
+- [KYB for business crypto accounts: documents, timelines, and owners](https://cryp2bus.com/blog/kyb-for-business-crypto-accounts/)
+- [Liquidity buffers for crypto payable runs: sizing without guesswork](https://cryp2bus.com/blog/liquidity-buffers-for-crypto-payable-runs/)
+- [Month-end tie-out for stablecoin balances: a controller checklist](https://cryp2bus.com/blog/month-end-tie-out-for-stablecoin-balances/)
+- [Multi-currency invoice settlement with crypto: a corridor checklist](https://cryp2bus.com/blog/multi-currency-invoice-settlement-with-crypto/)
+- [Network choice for USDT and USDC invoices: what AP must confirm before release](https://cryp2bus.com/blog/network-choice-for-usdt-and-usdc-invoices/)
+- [Network fee responsibility on B2B crypto invoices: who funds the shortfall](https://cryp2bus.com/blog/network-fee-responsibility-on-b2b-crypto-invoices/)
+- [Off-ramping stablecoin receipts to the operating account: timing and evidence](https://cryp2bus.com/blog/off-ramping-stablecoin-receipts-to-fiat/)
+- [Partial payments and overpayments in crypto invoices: how to reconcile](https://cryp2bus.com/blog/partial-payments-and-overpayments-in-crypto-invoices/)
+- [Pilot checklist: accepting crypto for B2B invoices in 30 days](https://cryp2bus.com/blog/pilot-checklist-accepting-crypto-for-b2b-invoices/)
+- [Record retention for crypto payment files: what the evidence pack should keep](https://cryp2bus.com/blog/record-retention-for-crypto-payment-files/)
+- [Remittance advice after a crypto supplier payment: what to send with the hash](https://cryp2bus.com/blog/remittance-advice-after-a-crypto-supplier-payment/)
+- [Restricted corridors and business crypto payments: how to screen early](https://cryp2bus.com/blog/restricted-corridors-and-business-crypto-payments/)
+- [Roles and approvals for business crypto payments: maker-checker design](https://cryp2bus.com/blog/roles-and-approvals-for-business-crypto-payments/)
+- [Sanctions rescreening for repeat crypto payees: cadence, triggers, and evidence](https://cryp2bus.com/blog/sanctions-rescreening-for-repeat-crypto-payees/)
+- [Segregating operating stablecoins from reserves: a treasury wallet map](https://cryp2bus.com/blog/segregating-operating-stablecoins-from-reserves/)
+- [Source-of-funds pack for business stablecoin buys: documents treasury should file](https://cryp2bus.com/blog/source-of-funds-pack-for-business-stablecoin-buys/)
+- [Stablecoin clauses in supplier contracts: asset, network, tolerance, and fees](https://cryp2bus.com/blog/stablecoin-clauses-in-supplier-contracts/)
+- [Supplier onboarding for crypto settlement: questions to ask first](https://cryp2bus.com/blog/supplier-onboarding-for-crypto-settlement/)
+- [Test transfer before a supplier crypto payout: amount, network, and sign-off](https://cryp2bus.com/blog/test-transfer-before-supplier-crypto-payout/)
+- [Travel Rule basics for business crypto transfers: what ops should know](https://cryp2bus.com/blog/travel-rule-basics-for-business-crypto-transfers/)
+- [Unconfirmed crypto payment exception queue: aging hashes, tickets, and owners](https://cryp2bus.com/blog/unconfirmed-crypto-payment-exception-queue/)
+- [USDC vs USDT for supplier payments: what finance teams compare](https://cryp2bus.com/blog/usdc-vs-usdt-for-supplier-payments/)
+- [Vendor master fields for crypto payees: what AP should store before release](https://cryp2bus.com/blog/vendor-master-fields-for-crypto-payees/)
+- [Wallet change controls for supplier payouts: stopping payment diversion](https://cryp2bus.com/blog/wallet-change-controls-for-supplier-payouts/)
+- [Weekend and holiday settlement with stablecoins: ops realities](https://cryp2bus.com/blog/weekend-and-holiday-settlement-with-stablecoins/)
+- [Weekly stablecoin payable runbook: batch, review, release, and handoff](https://cryp2bus.com/blog/weekly-stablecoin-payable-runbook/)
+- [When a crypto invoice counts as paid: confirmation rules finance can defend](https://cryp2bus.com/blog/when-a-crypto-invoice-counts-as-paid/)
+- [When businesses use OTC crypto desks instead of public exchanges](https://cryp2bus.com/blog/when-businesses-use-otc-crypto-desks/)
+
+## Contact
+
+Open a Cryptobus business account to buy crypto, pay invoices, and settle cross-border: https://cryp2bus.com/
