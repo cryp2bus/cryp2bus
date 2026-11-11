@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Toaster } from '@/components/ui/toaster';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClientInstance } from '@/lib/query-client';
@@ -24,6 +25,16 @@ import Faq from '@/pages/Faq';
 import LegalPage from '@/pages/LegalPage';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
+
+const DemoShell = lazy(() => import('@/pages/demo/DemoShell'));
+
+function DemoRouteFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center text-sm text-muted-foreground">
+      Loading client access…
+    </div>
+  );
+}
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
 
@@ -53,6 +64,14 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/legal/:slug" element={<LegalPage />} />
               </Route>
+              <Route
+                path="/test/*"
+                element={
+                  <Suspense fallback={<DemoRouteFallback />}>
+                    <DemoShell />
+                  </Suspense>
+                }
+              />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </LeadModalProvider>
